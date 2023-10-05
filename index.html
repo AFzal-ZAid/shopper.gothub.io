@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en" class="hydrated"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+    <meta name="apple-mobile-web-app-title" content="ShoPperS">
+
+   
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#444">
+
+
+
+  
+    <script src="./stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+
+  <title> ShoPperS.com</title>
+
+  
+  
+  
+  
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  background: black;
+}
+.heading ul {
+  display: flex;
+}
+.logo a {
+  color: white;
+  transition-duration: 1s;
+  font-weight: 800;
+}
+.logo a:hover {
+  color: rgb(240, 197, 6);
+  transition-duration: 1s;
+}
+.heading ul li {
+  list-style: none;
+}
+.heading ul li a {
+  margin: 5px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  position: relative;
+  color: white;
+  margin: 2px 14px;
+  font-size: 18px;
+  transition-duration: 1s;
+}
+.heading ul li a:active {
+  color: red;
+}
+.heading ul li a:hover {
+  color: rgb(243, 168, 7);
+  transition-duration: 1s;
+}
+
+.heading ul li a::before {
+  content: "";
+  height: 2px;
+  width: 0px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  transition-duration: 1s;
+}
+.heading ul li a:hover::before {
+  width: 100%;
+  transition-duration: 1s;
+  background-color: rgb(243, 168, 7);
+}
+#input {
+  height: 30px;
+  width: 300px;
+  text-decoration: none;
+  border: 0px;
+  padding: 5px;
+}
+.logo a {
+  color: white;
+  font-size: 35px;
+  font-weight: 500;
+  text-decoration: none;
+}
+ion-icon {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  color: black;
+}
+ion-icon:hover {
+  cursor: pointer;
+}
+.search a {
+  display: flex;
+}
+header a ion-icon {
+  position: relative;
+  right: 3px;
+}
+
+.img-slider img {
+  height: 720px;
+  width: 1080px;
+}
+@keyframes slide {
+  0% {
+    left: 0px;
+  }
+  15% {
+    left: 0px;
+  }
+  20% {
+    left: -1080px;
+  }
+  32% {
+    left: -1080px;
+  }
+  35% {
+    left: -2160px;
+  }
+  47% {
+    left: -2160px;
+  }
+  50% {
+    left: -3240px;
+  }
+  63% {
+    left: -3240px;
+  }
+  66% {
+    left: -4320px;
+  }
+  79% {
+    left: -4320px;
+  }
+  82% {
+    left: -5400px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+.img-slider {
+  display: flex;
+  float: left;
+  position: relative;
+  width: 1080px;
+  height: 720px;
+  animation-name: slide;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  transition-duration: 2s;
+}
+
+.heading1 {
+  opacity: 0;
+}
+.search {
+  display: flex;
+  position: relative;
+}
+.section1 {
+  width: 1080px;
+  overflow: hidden;
+
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+}
+
+.section2 .container {
+  display: flex;
+  width: 100%;
+  height: max-content;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px auto;
+}
+.section2 .container .items {
+  margin: 10px;
+  width: 200px;
+  height: 300px;
+  background-color: white;
+  border: 2.5px solid black;
+  border-radius: 12px;
+}
+.section2 .container .items .name {
+  text-align: center;
+  background-color: rgb(6, 205, 240);
+  height: 25px;
+  padding-top: 4px;
+  color: white;
+  margin: 0;
+}
+.section2 .container .items .price {
+  float: left;
+  padding-left: 10px;
+  display: block;
+  width: 100%;
+  color: rgb(255, 0, 0);
+  font-weight: 650;
+}
+.section2 .container .items .info {
+  padding-left: 10px;
+  color: rgb(7, 164, 243);
+}
+.section2 .container .items .img img {
+  width: 200px;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+  transition-duration: 0.8s;
+}
+.section2 .container .items .img {
+  overflow: hidden;
+  margin: 0;
+}
+.section2 .container .items:hover .img img {
+  transform: scale(1.2);
+  transition-duration: 0.8s;
+  border-radius: 12px;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  align-items: center;
+  color: white;
+}
+
+.footer1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  margin-top: 15px;
+}
+.social-media {
+  display: flex;
+  justify-content: center;
+  color: white;
+  flex-wrap: wrap;
+}
+.social-media a {
+  color: white;
+  margin: 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  color: white;
+}
+.social-media a ion-icon {
+  color: white;
+  background-color: black;
+}
+.social-media a:hover ion-icon {
+  color: red;
+  transform: translateY(5px);
+}
+.footer2 {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  text-decoration: none;
+  flex-wrap: wrap;
+}
+.footer0 {
+  font-weight: 1200;
+  transition-duration: 1s;
+}
+.footer0:hover {
+  color: rgb(7, 133, 243);
+}
+.footer2 .heading {
+  font-weight: 900;
+  font-size: 18px;
+}
+.footer3 {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer2 .heading:hover {
+  color: rgb(7, 164, 243);
+}
+.footer2 .div:hover {
+  transform: scale(1.05);
+}
+.footer3 h4 {
+  margin: 0 10px;
+}
+.footer2 div {
+  margin: 10px;
+}
+.menu {
+  visibility: hidden;
+}
+.heading1 .ham:active {
+  color: red;
+}
+.items {
+  overflow: hidden;
+}
+.ham,
+.close {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1250px) {
+  .heading ul li {
+    display: none;
+  }
+
+  .items {
+    transform: scale(0.9);
+  }
+  .img-slider img {
+    height: 60vw;
+    width: 80vw;
+  }
+  .ham:active {
+    color: red;
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu a ion-icon {
+    position: absolute;
+  }
+
+  @keyframes slide1 {
+    0% {
+      left: 0vw;
+    }
+    15% {
+      left: 0vw;
+    }
+    20% {
+      left: -80vw;
+    }
+    32% {
+      left: -80vw;
+    }
+    35% {
+      left: -160vw;
+    }
+    47% {
+      left: -160vw;
+    }
+    50% {
+      left: -240vw;
+    }
+    63% {
+      left: -240vw;
+    }
+    66% {
+      left: -320vw;
+    }
+    79% {
+      left: -320vw;
+    }
+    82% {
+      left: -400vw;
+    }
+    100% {
+      left: 0vw;
+    }
+  }
+  .menu ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    left: 0;
+    top: 0;
+    z-index: 11;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+  }
+  .close {
+    z-index: 34;
+
+    color: white;
+    background-color: black;
+  }
+  .close:active {
+    color: red;
+  }
+  .menu ul li {
+    list-style: none;
+    margin: 20px;
+    border-top: 3px solid white;
+    width: 80%;
+    text-align: center;
+
+    padding-top: 10px;
+  }
+  .menu ul li a {
+    text-decoration: none;
+    padding-top: 10px;
+    color: white;
+    font-weight: 900;
+  }
+  .menu ul li a:hover {
+    color: rgb(6, 166, 240);
+  }
+  .img-slider {
+    display: flex;
+    float: left;
+    position: relative;
+    width: 80%;
+    height: 60%;
+    animation-name: slide1;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    transition-duration: 2s;
+  }
+  .section1 {
+    width: 80%;
+    overflow: hidden;
+
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+  }
+
+  .heading1 {
+    opacity: 1;
+    position: relative;
+    bottom: 8px;
+  }
+  .search a {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .heading1 .ham {
+    background-color: black;
+    color: white;
+  }
+  #input {
+    width: 200px;
+    flex-shrink: 2;
+  }
+  header {
+    height: 150px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .heading ul li {
+    display: none;
+  }
+  .heading1 {
+    opacity: 1;
+
+    bottom: 8px;
+  }
+
+  header {
+    height: 250px;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+  }
+  #input {
+    width: 150px;
+  }
+  .close {
+    z-index: 34;
+  }
+
+  .search a {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+<script type="module" src="./ionicons.esm.js"></script><script nomodule="" src="./ionicons.js"></script></head>
+
+<body translate="no">
+  
+
+  <link rel="stylesheet" href="./ecommerce.css">
+  <link href="./ionicons.min.css" rel="stylesheet">
+
+
+
+  <header>
+    <div class="logo"><a href="https://affy______?utm_source/abLWORx?view=#">ShoPperS</a></div>
+    <div class="menu">
+      <a href="https://cdpn.io/himanishu/fullpage/abLWORx?view=#">
+        <ion-icon name="close" class="close md hydrated" role="img" aria-label="close"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="s-ion-icon"><path d="M405 136.798L375.202 107 256 226.202 136.798 107 107 136.798 226.202 256 107 375.202 136.798 405 256 285.798 375.202 405 405 375.202 285.798 256z"></path></svg></div></template></ion-icon>
+      </a>
+
+      <ul>
+        <li><a href="" class="under">HOME</a></li>
+        <li><a href="" class="under">SHOP</a></li>
+        <li><a href=""class="under">OUR PRODUCTS</a></li>
+        <li><a href="" class="under">CONTACT US</a></li>
+        <li><a href="" class="under">ABOUT US</a></li>
+
+      </ul>
+    </div>
+    <div class="search">
+
+      <a href="https://instagram.com/affy______?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"><input type="text" placeholder="search products" id="input">
+        <ion-icon class="s md hydrated" name="search" role="img" aria-label="search"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="s-ion-icon"><path d="M337.509 305.372h-17.501l-6.571-5.486c20.791-25.232 33.922-57.054 33.922-93.257C347.358 127.632 283.896 64 205.135 64 127.452 64 64 127.632 64 206.629s63.452 142.628 142.225 142.628c35.011 0 67.831-13.167 92.991-34.008l6.561 5.487v17.551L415.18 448 448 415.086 337.509 305.372zm-131.284 0c-54.702 0-98.463-43.887-98.463-98.743 0-54.858 43.761-98.742 98.463-98.742 54.7 0 98.462 43.884 98.462 98.742 0 54.856-43.762 98.743-98.462 98.743z"></path></svg></div></template></ion-icon>
+      </a>
+    </div>
+    <div class="heading">
+      <ul>
+        <li><a href="https://instagram.com/affy______?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" class="under">HOME</a></li>
+        <li><a href="https://instagram.com/affy______?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" class="under">SHOP</a></li>
+        <li><a href="https://www.facebook.com/mdzaidsmith.smith?mibextid=b06tZ0" class="under">OUR PRODUCTS</a></li>
+        <li><a href="https://www.facebook.com/mdzaidsmith.smith?mibextid=b06tZ0" class="under">CONTACT US</a></li>
+        <li><a href="https://www.facebook.com/mdzaidsmith.smith?mibextid=b06tZ0" class="under">ABOUT US</a></li>
+      </ul>
+    </div>
+    <div class="heading1">
+      <ion-icon name="menu" class="ham md hydrated" role="img" aria-label="menu"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="s-ion-icon"><path d="M64 384h384v-42.666H64V384zm0-106.666h384v-42.667H64v42.667zM64 128v42.665h384V128H64z"></path></svg></div></template></ion-icon>
+    </div>
+  </header>
+  <section>
+    <div class="section">
+      <div class="section1">
+        <div class="img-slider">
+          <img src="./pexels-photo-6347888.jpeg" alt="" class="img">
+          <img src="./pexels-photo-3962294.jpeg" alt="" class="img">
+          <img src="./pexels-photo-2292953.jpeg" alt="" class="img">
+          <img src="./pexels-photo-1229861.jpeg" alt="" class="img">
+          <img src="./pexels-photo-1598505.jpeg" alt="" class="img">
+        </div>
+
+      </div>
+      <div class="section2">
+        <div class="container">
+          <div class="items">
+            <div class="img img1"><img src="shoes.jpeg" alt=""></div>
+            <div class="name">SHOES</div>
+            <div class="price">Rs.500</div>
+            <button>Buy Now</button>
+          </div>
+          <div class="items">
+            <div class="img img2"><img src="shirt.avif" alt=""></div>
+            <div class="name">MEN's T-SHIRT</div>
+            <div class="price">Rs.650</div>
+            <button>Buy Now</button>
+          </div>
+          <div class="items">
+            <div class="img img3"><img src="jeans.jpeg" alt=""></div>
+            <div class="name">JEANS</div>
+            <div class="price">Rs.750</div>
+            <button>Buy Now</button>
+          </div>
+          <div class="items">
+            <div class="img img3"><img src="sun glasses.jpg" alt=""></div>
+            <div class="name">Sun Glasses</div>
+            <div class="price">Rs.149</div>
+            <button>Buy Now</button>
+          </div>
+          <div class="items">
+            <div class="img img3"><img src="pursemen.webp" alt=""></div>
+            <div class="name">PurseS</div>
+            <div class="price">Rs.399</div>
+            <button>Buy Now</button>
+          </div>
+          <div class="items">
+            <div class="img img1"><img src="./pexels-photo-8839887.jpeg" alt=""></div>
+            <div class="name">WATCH</div>
+            <div class="price">Rs.250</div>
+            <button>Buy Now</button>
+          </div>
+          <div class="items">
+            <div class="img img1"><img src="mobile.webp" alt=""></div>
+            <div class="name">SMART PHONE</div>
+            <div class="price">Rs.9999</div>
+            <button>Buy Now</button>
+          </div>
+          <div class="items">
+            <div class="img img1"><img src="tele.jpeg" alt=""></div>
+            <div class="name">TELEVISION</div>
+            <div class="price">Rs.12999</div>
+            <button>Buy Now</button>
+          </div>
+          <div class="items">
+            <div class="img img1"><img src="hoodies.jpeg" alt=""></div>
+            <div class="name">HOODIES</div>
+            <div class="price">Rs.650</div>
+            <br>
+            <button>Buy Now</button>
+          </div>
+          <div class="items">
+            <div class="img img1"><img src="dinner.avif" alt=""></div>
+            <div class="name">DINNER SET</div>
+            <div class="price">Rs.999</div>
+            <button>Buy Now </button><col.red></col.red>
+          </div>
+          <div class="items">
+            <div class="img img1"><img src="blanket.jpeg" alt=""></div>
+            <div class="name">BLANKETS</div>
+            <div class="price">Rs.699</div>
+            <button>Buy Now</button>
+          </div>
+          <div class="items">
+            <div class="img img1"><img src="laptop.jpeg" alt=""></div>
+            <div class="name">LAPTOP</div>
+            <div class="price">Rs.20999</div>
+            <button>Buy Now</button>
+          </div>
+          <div class="items">
+            <div class="img img1"><img src="./istockphoto-1144960519-1024x1024.jpg" alt=""></div>
+            <div class="name">MICROWAVE</div>
+            <div class="price">Rs.7999</div>
+            <button>Buy Now</button>
+          </div>
+          <div class="items">
+            <div class="img img1"><img src="./istockphoto-177395430-1024x1024.jpg" alt=""></div>
+            <div class="name">COFFEE MAKER</div>
+            <div class="price">Rs.8999</div>
+            <button>Buy Now</button>
+          </div>
+          <div class="items">
+            <div class="img img1"><img src="bed.jpg" alt=""></div>
+            <div class="name">BED</div>
+            <div class="price">Rs.5999</div>
+            <button>Buy Now</button>
+          </div>
+          <div class="items">
+            <div class="img img1"><img src="ac.webp" alt=""></div>
+            <div class="name">AIR CONDITIONER</div>
+            <div class="price">Rs.20999</div>
+            <button>Buy Now</button>
+          </div>
+          <div class="items">
+            <div class="img img1"><img src="book.jpeg" alt=""></div>
+            <div class="name">BOOK</div>
+            <div class="price">Rs.150</div>
+            <button>Buy Now</button>
+          </div>
+          <div class="items">
+            <div class="img img1"><img src="bag.jpeg" alt=""></div>
+            <div class="name">BAG</div>
+            <div class="price">Rs.350</div>
+            <button>Buy now</button>
+          </div>
+          <div class="items">
+            <div class="img img1"><img src="saree.jpg" alt=""></div>
+            <div class="name">SAREES</div>
+            <div class="price">Rs.650</div>
+            <button>Buy Now</button>
+          </div>
+          <div class="items">
+            <div class="img img1"><img src="./pexels-photo-5816934.jpeg" alt=""></div>
+            <div class="name">WASHING MACHINE</div>
+            <div class="price">Rs.8999</div>
+            <button>Buy Now</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+  <footer>
+    <div class="footer0">
+      <h1>ShoPperS</h1>
+    </div>
+    <div class="footer1 ">
+      Connect with us at<div class="social-media">
+        <a href="https://www.facebook.com/mdzaidsmith.smith?mibextid=b06tZ0">
+          <ion-icon name="logo-facebook" role="img" class="md hydrated" aria-label="logo facebook"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="s-ion-icon"><path d="M426.8 64H85.2C73.5 64 64 73.5 64 85.2v341.6c0 11.7 9.5 21.2 21.2 21.2H256V296h-45.9v-56H256v-41.4c0-49.6 34.4-76.6 78.7-76.6 21.2 0 44 1.6 49.3 2.3v51.8h-35.3c-24.1 0-28.7 11.4-28.7 28.2V240h57.4l-7.5 56H320v152h106.8c11.7 0 21.2-9.5 21.2-21.2V85.2c0-11.7-9.5-21.2-21.2-21.2z"></path></svg></div></template></ion-icon>
+        </a>
+        <a href="www.linkedin.com/in/
+        afzal-zaid-93207a292
+        ">
+          <ion-icon name="logo-linkedin" role="img" class="md hydrated" aria-label="logo linkedin"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="s-ion-icon"><path d="M417.2 64H96.8C79.3 64 64 76.6 64 93.9V415c0 17.4 15.3 32.9 32.8 32.9h320.3c17.6 0 30.8-15.6 30.8-32.9V93.9C448 76.6 434.7 64 417.2 64zM183 384h-55V213h55v171zm-25.6-197h-.4c-17.6 0-29-13.1-29-29.5 0-16.7 11.7-29.5 29.7-29.5s29 12.7 29.4 29.5c0 16.4-11.4 29.5-29.7 29.5zM384 384h-55v-93.5c0-22.4-8-37.7-27.9-37.7-15.2 0-24.2 10.3-28.2 20.3-1.5 3.6-1.9 8.5-1.9 13.5V384h-55V213h55v23.8c8-11.4 20.5-27.8 49.6-27.8 36.1 0 63.4 23.8 63.4 75.1V384z"></path></svg></div></template></ion-icon>
+        </a>
+        <a href="https://afzal-zaid-93207a292/fullpage/abLWORx?view=#">
+          <ion-icon name="logo-youtube" role="img" class="md hydrated" aria-label="logo youtube"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="s-ion-icon"><path d="M508.6 148.8c0-45-33.1-81.2-74-81.2C379.2 65 322.7 64 265 64h-18c-57.6 0-114.2 1-169.6 3.6C36.6 67.6 3.5 104 3.5 149 1 184.6-.1 220.2 0 255.8c-.1 35.6 1 71.2 3.4 106.9 0 45 33.1 81.5 73.9 81.5 58.2 2.7 117.9 3.9 178.6 3.8 60.8.2 120.3-1 178.6-3.8 40.9 0 74-36.5 74-81.5 2.4-35.7 3.5-71.3 3.4-107 .2-35.6-.9-71.2-3.3-106.9zM207 353.9V157.4l145 98.2-145 98.3z"></path></svg></div></template></ion-icon>
+        </a>
+        <a href="https://instagram.com/affy______?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D">
+          <ion-icon name="logo-instagram" role="img" class="md hydrated" aria-label="logo instagram"><template shadowrootmode="open"><div class="icon-inner"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="s-ion-icon"><path d="M336 96c21.2 0 41.3 8.4 56.5 23.5S416 154.8 416 176v160c0 21.2-8.4 41.3-23.5 56.5S357.2 416 336 416H176c-21.2 0-41.3-8.4-56.5-23.5S96 357.2 96 336V176c0-21.2 8.4-41.3 23.5-56.5S154.8 96 176 96h160m0-32H176c-61.6 0-112 50.4-112 112v160c0 61.6 50.4 112 112 112h160c61.6 0 112-50.4 112-112V176c0-61.6-50.4-112-112-112z"></path><path d="M360 176c-13.3 0-24-10.7-24-24s10.7-24 24-24c13.2 0 24 10.7 24 24s-10.8 24-24 24zM256 192c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64m0-32c-53 0-96 43-96 96s43 96 96 96 96-43 96-96-43-96-96-96z"></path></svg></div></template></ion-icon>
+        </a>
+    
+      </div>
+    </div>
+    <div class="footer2">
+      <div class="product">
+        <div class="heading">Products</div>
+        <div class="div">Sell your Products</div>
+        <div class="div">Advertise</div>
+        <div class="div">Pricing</div>
+        <div class="div">Product Buisness</div>
+
+      </div>
+      <div class="services">
+        <div class="heading">Services</div>
+        <div class="div">Return</div>
+        <div class="div">Cash Back</div>
+        <div class="div">Affiliate Marketing</div>
+        <div class="div">Others</div>
+      </div>
+      <div class="Company">
+        <div class="heading">Company</div>
+        <div class="div">Complaint</div>
+        <div class="div">Careers</div>
+        <div class="div">Affiliate Marketing</div>
+        <div class="div">Support</div>
+      </div>
+      <div class="Get Help">
+        <div class="heading">Get Help</div>
+        <div class="div">Help Center</div>
+        <div class="div">Privacy Policy</div>
+        <div class="div">Terms</div>
+        <div class="div">Login</div>
+      </div>
+    </div>
+    <div class="footer3">Copyright © <h4>ShoPperZ</h4> 2023 with åƒƒ¥</div>
+  </footer>
+  <script src="./ionicons(1).js"></script>
+  <script src="./ecommerce.js"></script>
+
+
+
+
+  
+      <script id="rendered-js">
+const close = document.querySelector(".close");
+const open = document.querySelector(".ham");
+const menu = document.querySelector(".menu");
+close.addEventListener("click", () => {
+  menu.style.visibility = "hidden";
+});
+open.addEventListener("click", () => {
+  menu.style.visibility = "visible";
+});
+//# sourceURL=pen.js
+    </script>
+
+  
+
+
+
+</body></html>
